@@ -1,3 +1,138 @@
+@font-face {
+  font-family: 'Pixelta';
+  src: url('fonts/Pixelta.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KiwiSoda';
+  src: url('fonts/KiwiSoda.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Daydream';
+  src: url('fonts/Daydream_Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-    background-color:slateblue;
+    background-color:#5b5c96;
+}
+
+h1, h2 {
+  image-rendering: pixelated; /* Делает пиксели четкими при масштабировании */
+}
+
+h1 {
+  font-family: 'Pixelta', serif;
+  font-size: 6rem;
+  letter-spacing: 6px;
+  color: #dad7f7;        
+}
+
+h2 {
+  font-family: 'KiwiSoda', serif;
+  font-size: 3rem;
+  color: #9f9ac7;
+}
+
+.ascii-art {
+  font-family: 'Courier New', monospace; 
+  font-size: 0.42rem;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+/* Контейнер для прокрутки */
+.scroll-container {
+  display: flex;                  /* Выстраивает карточки в одну линию */
+  overflow-x: auto;              /* Включает горизонтальную прокрутку */
+  scroll-snap-type: x mandatory;  /* Включает жесткую «магнитную» привязку по оси X */
+  scroll-behavior: smooth;        /* Делает прокрутку плавной */
+  gap: 20px;                     /* Расстояние между карточками */
+  padding: 20px;
+  width: 100%;                   /* Растягивается на всю доступную ширину */
+  box-sizing: border-box;
+}
+
+/* Скрываем стандартный скроллбар */
+.scroll-container::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Карточка */
+.card {
+  flex: 0 0 80%;                 /* Карточка занимает 80% ширины экрана (чтобы было видно край следующей) */
+  scroll-snap-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;        /* Картинка сверху, текст снизу */
+}
+
+/* Фотография внутри карточки */
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Блок с текстом под фото */
+.card-content {
+  padding: 20px;
+  color: #333;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  font-family: 'Daydream', sans-serif; 
+}
+
+/* Общий контейнер, чтобы позиционировать стрелки относительно него */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Общие стили для кнопок */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Центрирование по вертикали */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  color: white;
+  border: none;
+  width: 30px;
+  height: 67px;
+  border-radius: 12%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+/* Эффект при наведении */
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Позиция левой стрелки */
+.prev-btn {
+  left: 10px;
+}
+
+/* Позиция правой стрелки */
+.next-btn {
+  right: 10px;
 }
