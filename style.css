@@ -19,12 +19,26 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Cyberpunks';
+  src: url('fonts/Cyberpunks.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel';
+  src: url('fonts/Cinzel_Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
     background-color:#5b5c96;
 }
 
-h1, h2 {
+h1, h2, h3 {
   image-rendering: pixelated; /* Делает пиксели четкими при масштабировании */
 }
 
@@ -38,6 +52,12 @@ h1 {
 h2 {
   font-family: 'KiwiSoda', serif;
   font-size: 3rem;
+  color: #dad7f7;
+}
+
+h3 {
+  font-family: 'KiwiSoda', serif;
+  font-size: 2rem;
   color: #9f9ac7;
 }
 
@@ -68,20 +88,19 @@ h2 {
 
 /* Карточка */
 .card {
-  flex: 0 0 80%;                 /* Карточка занимает 80% ширины экрана (чтобы было видно край следующей) */
+  flex: 0 0 500px; 
   scroll-snap-align: center;
-  background-color: #fff;
+  background-color: #000000;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;        /* Картинка сверху, текст снизу */
 }
 
 /* Фотография внутри карточки */
 .card img {
-  width: 100%;
-  height: 250px;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -135,4 +154,54 @@ h2 {
 /* Позиция правой стрелки */
 .next-btn {
   right: 10px;
+}
+
+#cyberpunck {
+  h2 {
+    font-family: 'Cyberpunks', serif;
+    color: #f2ff3d;
+    letter-spacing: 0.15rem;
+  }
+}
+
+#starcitizen {
+  h2 {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+  }
+}
+
+#minecraft {
+  h2 {
+    font-family: 'Courier New', serif;
+    color: #55be4c;
+  }
+}
+
+#bodycam {
+  h2 {
+    font-family: 'Courier New', serif;
+    color: #be2206;
+  }
+}
+
+#alanwake {
+  h2 {
+    font-family: 'Courier New', serif;
+    color: #b3cc8c;
+  }
+}
+
+#pacificdrive {
+  h2 {
+    font-family: 'Courier New', serif;
+    color: #f8de47;
+  }
+}
+
+#expidition {
+  h2 {
+    font-family: 'Courier New', serif;
+    color: #d7dab7;
+  }
 }
